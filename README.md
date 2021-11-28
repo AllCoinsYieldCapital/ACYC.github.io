@@ -1,1 +1,0 @@
-# all-coins-yield-capital
