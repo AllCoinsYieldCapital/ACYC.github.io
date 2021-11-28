@@ -1,0 +1,1582 @@
+@import "vars"
+@import "fonts"
+@import "libs"
+
+::placeholder
+	color: #666
+
+::selection
+	background-color: $accent
+	color: #fff
+
+html, body
+	height: 100%
+
+body
+	font-size: 18px
+	line-height: 1.67
+	min-width: 320px
+	position: relative
+	color: #777777
+	font-family: $default-font
+	overflow-x: hidden
+	input, textarea
+			border: #666 1px solid
+			outline: none
+			&:focus:required:invalid
+				border-color: red
+			&:required:valid
+				border-color: green
+
+.img-responsive
+	display: block
+	max-width: 100%
+	height: auto
+
+.text-center
+	text-align: center
+
+.inline-block
+	display: inline-block
+
+.wrapper
+	position: relative
+	overflow: hidden
+// reset styles start
+ul
+	margin: 0 
+	padding: 0
+	list-style-type: none
+
+p
+	margin: 0 
+	padding: 0
+
+h1,h2,h3,h4,h5,h6
+	margin: 0
+	padding: 0
+
+a
+	&:hover
+		outline: none
+		text-decoration: none
+	&:focus
+		outline: none
+		text-decoration: none
+
+input, button
+	&:hover,&:focus
+		outline: none
+// reset styles end
+
+// base clasess start
+
+.section-header
+	&--center
+		text-align: center
+	&--white
+		h2
+			color: #ffffff
+	&--black
+		h2
+			color: $black
+	&--tire 
+		h4
+			padding-left: 50px
+			position: relative
+			&:after
+				content: ""
+				position: absolute
+				top: 50%
+				transform: translateY(-50%)
+				width: 40px
+				left: 0
+				border-bottom: 1px solid $purpure
+	&--big-margin
+		margin-bottom: 35px
+	&--medium-margin
+		margin-bottom: 35px
+	&--small-margin
+		margin-bottom: 30px
+		
+h1
+	font-size: 40px
+	line-height: 40px
+	font-family: $Raleway
+	font-weight: 700
+	color: #ffffff
+	span
+		font-size: 35px
+		display: inline
+		font-family: $Raleway
+		font-weight: 100
+
+h2
+	font-family: $Raleway
+	font-weight: 700
+	font-size: 30px
+	line-height: 35px
+	color: #51475a
+
+h3
+	font-size: 18px
+	font-family: $Raleway
+	font-weight: 700
+	color: #333333
+
+h4	
+	font-size: 12px
+	letter-spacing: 1.2px
+	color: $purpure
+	text-transform: uppercase
+	font-family: $Catamaran
+	font-weight: 700
+	margin-bottom: 15px
+
+section
+	position: relative
+	z-index: 1
+
+.section
+	padding: 60px 0
+	&--no-pad-bot
+		padding-bottom: 0
+	&--no-pad-top
+		padding-top: 0
+
+.social-block
+	margin-bottom: 30px
+	&__title
+		color: #ffffff
+		margin-bottom: 20px
+
+.social-list
+	display: flex
+	align-items: center
+	&__item
+		margin-right: 10px
+		&:last-child
+			margin-right: 0
+	&__link
+		width: 40px
+		height: 40px
+		border: 1px solid rgba(255,255,255,0.5)
+		position: relative
+		transition: border 0.4s
+		display: block
+		border-radius: 50%
+		.fontello-icon
+			position: absolute
+			top: 50%
+			left: 50%
+			transform: translate(-50%, -50%)
+		&:hover
+			border: 1px solid rgba(255,255,255,1)
+
+.fontello-icon 
+	font-family: fontello
+	font-style: normal
+	font-weight: normal
+	speak: none
+	display: inline-block
+	text-decoration: inherit
+	text-align: center
+	font-variant: normal
+	text-transform: none
+	line-height: 1em
+	color: #fff	
+
+.btn
+	border-radius: 5px
+	height: 55px
+	line-height: 58px
+	color: #ffffff
+	transition: background-color 0.4s, color 0.4s, box-shadow 0.4s
+	font-size: 16px
+	display: inline-block
+	border: none
+	font-family: $Catamaran
+	font-weight: 600
+	letter-spacing: 0.8px
+	&--medium
+		padding: 0 30px
+	&--big
+		padding: 0 35px
+	&--green
+		background-color: $green
+		&:hover
+			background-color: #333333
+			color: #ffffff
+	&--white
+		background-color: #fff
+		color: $purpure
+		&:hover
+			background-color: $purpure
+			color: #fff
+	&--purpure
+		color: #ffffff
+		background-color: $purpure
+		&:hover
+			background-color: #fff
+			color: $purpure
+	&--purpure-shadow
+		color: #ffffff
+		background-color: $purpure
+		box-shadow: 0 0 21px rgba(152, 108, 169, 0.79)
+		&:hover
+			background-color: #383838
+			color: #ffffff
+			box-shadow: 0 0 21px rgba(56, 56, 56, 0.79)
+
+.bg-triangle-left
+	position: absolute
+	top: 25%
+	left: 0
+	z-index: 0
+	display: none
+
+.bg-triangle-top
+	position: absolute
+	top: 4%
+	right: 0
+	z-index: 0
+	display: none
+
+
+// base claesses end
+	
+// header start
+.header
+	position: absolute
+	top: 0px
+	left: 0
+	width: 100%
+	z-index: 10
+	height: 90px
+	padding: 0 10px
+	display: flex
+	justify-content: space-between
+	align-items: center
+	transition: background-color 0.4s
+	&__right
+		display: none
+		align-items: center
+	&.sticky
+		position: fixed
+		top: 0
+		left: 0
+		width: 100%	
+		background-color: #ffffff
+		z-index: 11
+		height: 90px
+		border-bottom: 1px solid #f5f5f5
+		transition: background-color 0.4s
+		padding: 0 10px
+		.logo
+			&__title
+				color: #777777
+			&__img
+				background-image: url(../img/Logo_gradient.svg)
+		.menu
+			&__link
+				color: #777777
+				&:after
+					border-bottom: 2px solid $purpure
+		.select-styled
+			color: #777777
+			&:after
+				background-image: url(../img/down-chevron-grey.svg)
+		.btn-sign-up
+			color: #777777
+			&:hover
+				color: $purpure
+		.btn-menu
+			div
+				background-color: #777777
+				&.one, &.three
+					&:after
+						background-color: #777777
+
+					
+.logo
+	display: flex
+	align-items: center
+	transition: opacity 0.4s
+	position: relative
+	top: -3.5px
+	&__img
+		width: 45px
+		height: 51px
+		background-image: url(../img/Logo_white.svg)
+		background-size: contain
+		background-position: center
+		background-repeat: no-repeat
+		margin-right: 13px
+		transition: background-image 0.4s
+	&__img--big
+		width: 62px
+	&__title
+		font-size: 27px
+		color: #fff
+		font-family: "Gilroy-Light"
+	&:hover
+		opacity: 0.5
+	&--color
+		.logo__img
+			background-image: url(../img/Logo_gradient.svg)
+		.logo__title
+			color: #777777
+
+.btn-menu
+	position: relative
+	justify-content: center
+	align-items: flex-end
+	flex-direction: column
+	cursor: pointer
+	text-align: right
+	margin-left: 25px
+	display: block
+	div
+		width: 32px
+		height: 3px
+		min-height: 3px
+		transition: 0.3s
+		backface-visibility: hidden
+		-moz-transition-duration: 0.3s
+		-o-transition-duration: 0.3s
+		-webkit-transition-duration: 0.3s
+		transition-duration: 0.3s
+		margin-bottom: 6px
+		border-radius: 1.5px
+		position: relative
+		background-color: #fff
+		&:first-child
+			&:after
+				content: ''
+				position: absolute
+				top: 0
+				right: 0
+				width: 100%
+				height: 100%
+				background-color: #fff
+				border-radius: 1.5px
+				transition: 0.4s
+		&:last-child
+			margin-bottom: 0
+			&:after
+				content: ''
+				position: absolute
+				top: 0
+				left: 0
+				width: 100%
+				height: 100%
+				background-color: #fff
+				border-radius: 1.5px
+				transition: 0.4s
+
+	&.on
+		top: -5px
+
+.btn-menu.on .one 
+	transform: rotate(45deg) translate(6px, 2px)
+	margin-bottom: 0
+	&:after
+		width: 100%
+		background-color: #777777
+
+.btn-menu.on .two
+	opacity: 0
+	margin-bottom: 0
+
+.btn-menu.on .three 
+	transform: rotate(-45deg) translate(2px, 2px)
+	width: 32px
+	margin-bottom: 0
+	&:after
+		width: 100%
+		background-color: #777777
+
+.fixed-menu
+	position: fixed
+	background-color: #fff
+	width: 100%
+	height: 100%
+	left: 0
+	top: 0
+	z-index: 12
+	visibility: hidden
+	overflow-x: hidden
+	overflow-y: scroll
+	opacity: 0
+	transition: 0.4s 
+	&.open
+		visibility: visible
+		display: block	
+		opacity: 1	
+	&__header
+		width: 100%
+		height: 90px
+		display: flex
+		justify-content: space-between
+		align-items: center
+		padding: 0px 10px 0
+	&__content
+		padding: 20px 90px 20px
+	.select-styled.active
+		color: rgba(119, 119, 119, 1)
+	.select-options
+		right: -15px
+		top: 25px
+	.select-styled, .btn-sign-up
+		color: #777777
+	.select
+		margin-bottom: 30px
+	.btn-wrap
+		display: flex
+	.btn-menu
+		div
+			background-color: #777777
+			&.one, &.three
+				&:after
+					background-color: #777777
+
+.btn-close
+	svg
+		width: 28px
+		height: 28px
+		path
+			fill: #777777
+
+
+.mob-menu
+	margin-bottom: 40px
+	&__item
+		text-align: left
+		margin-bottom: 10px
+		&:last-child
+			margin-bottom: 0
+	&__link
+		color: #777777
+		position: relative
+		transition: 0.2s
+		white-space: nowrap
+		&:after
+			content: ''
+			position: absolute
+			bottom: 0px
+			left: 0
+			width: 100%
+			border-bottom: 2px solid $purpure
+			transition: 0.4s
+			opacity: 0
+		&:hover
+			color: #777777
+			&:after
+				opacity: 1
+
+.menu
+	display: none
+	align-items: center
+	&__item
+		margin-right: 20px
+		&:last-child
+			margin-right: 0
+	&__link
+		color: #ffffff
+		position: relative
+		transition: 0.2s
+		white-space: nowrap
+		&:after
+			content: ''
+			position: absolute
+			bottom: -9px
+			left: 0
+			width: 100%
+			border-bottom: 2px solid #ffffff
+			transition: 0.4s
+			opacity: 0
+		&:hover
+			color: #ffffff
+			&:after
+				opacity: 1
+
+.select-hidden
+	display: none
+	visibility: hidden
+	padding-right: 10px
+
+$background: #e74c3c
+$select-color: #fff
+$select-background: #000
+
+.select
+	cursor: pointer
+	display: inline-block
+	position: relative
+	color: $select-color
+	width: 35px
+	height: 30px
+	font-size: 16px
+	color: #ffffff
+	box-sizing: border-box
+	margin-right: 30px
+.select-styled 
+	position: absolute 
+	top: 50%
+	transform: translateY(-50%)
+	left: 0
+	border-radius: 0px
+	transition: 0.4s
+	color: #ffffff
+	font-size: 16px
+	text-transform: uppercase
+	z-index: 1
+	&:after
+		content: ""
+		width: 10px
+		height: 6px
+		background-image: url(../img/down-chevron.svg)
+		background-size: 10px 6px
+		background-repeat: no-repeat
+		position: absolute
+		top: 9px
+		right: -15px
+		transition: 0.4s
+	&:focus
+		outline: none
+		text-decoration: none
+	&:active, &.active
+		color: rgba(255,255,255,0.5)
+		&:after
+			transform: rotateX(-180deg)
+			opacity: 0.5
+	&:hover
+		color: rgba(255,255,255,0.5)
+		&:after
+			opacity: 0.5
+
+.select-options 
+	display: none
+	width: 80px
+	background-color: #fff
+	position: absolute
+	top: 45px
+	right: 0px
+	z-index: 2
+	margin: 0
+	padding: 0
+	list-style: none
+	padding: 24px 28px 22px 29px
+	&:before
+		content: ''
+		position: absolute
+		top: -10px
+		right: 0
+		width: 0
+		height: 0
+		border-left: 10px solid transparent
+		border-right: 0px solid transparent
+		border-bottom: 10px solid #fff
+	li
+		color: #ffffff
+		margin: 0
+		transition: 0.4s
+		font-size: 16px
+		text-transform: uppercase
+		color: #777777
+		margin-bottom: 15px
+		&:last-child
+			margin-bottom: 0
+		&:hover 
+			opacity: 0.5
+		&[rel="hide"] 
+			display: none
+
+.btn-sign-in
+	width: 92px
+	height: 40px
+	border-radius: 5px
+	background-color: $green
+	line-height: 40px
+	color: #ffffff
+	font-size: 16px
+	text-align: center
+	display: block
+	transition: 0.4s
+	white-space: nowrap
+	margin-right: 22px
+	&:hover
+		color: #fff
+		background-color: #333333
+
+.btn-sign-up
+	height: 40px
+	line-height: 40px
+	color: #ffffff
+	font-size: 16px
+	white-space: nowrap
+	transition: 0.4s
+	&:hover
+		color: rgba(255,255,255,0.5)
+
+
+// header end
+
+// promo start 
+
+.promo
+	position: relative
+	display: flex
+	align-items: center
+	padding-top: 110px
+	padding-bottom: 60px
+	background-image: url(../img/mainBg.png)
+	background-position: bottom center
+	background-repeat: no-repeat
+	background-size: cover
+	z-index: 2
+	.container
+		position: relative
+		z-index: 3
+	h1
+		margin-bottom: 30px	
+	p
+		max-width: 600px
+		margin-bottom: 30px
+		color: #fff
+	&__links-wrap
+		margin-bottom: 30px
+		display: block
+		align-items: center
+	&__link
+		display: flex
+		align-items: center
+		color: #fff
+		transition: color 0.4s
+		img
+			margin-right: 11px
+		i
+			width: 36px
+			height: 36px
+			border: 2px solid #ffffff
+			display: block
+			border-radius: 50%
+			position: relative
+			margin-right: 14px
+			transition: background-color 0.4s
+			svg
+				position: absolute
+				top: 50%
+				left: 55%
+				transform: translate(-50%, -50%)
+				transition: fill 0.4s
+		&:first-child
+			margin-bottom: 20px
+		&:hover
+			color: #ffffff
+			i
+				background-color: #fff
+				svg
+					path
+						fill: $purpure
+	&__btns-wrap
+		display: block
+		align-items: center
+		margin-bottom: 30px
+	.btn
+		width: 100%
+		text-align: center
+		&:first-child
+			margin-bottom: 15px
+
+
+	.scroll-down
+		position: absolute
+		bottom: -25px
+		left: 50%
+		transform: translateX(-50%)
+		z-index: 4
+		width: 51px
+		height: 51px
+		cursor: pointer
+// promo end
+
+// ico block start
+
+.ico
+	background-color: rgba(17, 4, 24, 0.5)
+	padding: 30px 25px 30px
+	text-align: center
+	&__title
+		color: #ffffff
+		font-family: $Catamaran
+		font-weight: 700
+		line-height: 45px
+		margin-bottom: 25px
+		font-size: 26px
+	&__subtitle
+		font-size: 18px
+		font-family: $Catamaran
+		font-weight: 400
+		color: #ffffff
+		margin-bottom: 35px
+	&__text
+		font-size: 16px
+		font-family: $Catamaran
+		font-weight: 300
+		margin-bottom: 30px
+		color: #ffffff
+	&__btn
+		box-shadow: 0 3px 32px rgba(209, 34, 83, 0.54)
+		border-radius: 5px
+		background-color: #ef1552
+		height: 70px
+		line-height: 70px
+		color: #ffffff
+		text-align: center
+		display: block
+		font-size: 20px
+		font-family: $Catamaran
+		letter-spacing: 1px
+		font-weight: 500
+		padding: 0
+		margin-bottom: 35px
+		transition: box-shadow 0.4s, background-color .4s
+		span
+			font-weight: 700
+		&:hover
+			box-shadow: 0 3px 32px rgba(209, 34, 83, 0.54)
+			background-color: #ff3f75
+			color: #ffffff
+
+.timer
+	display: flex
+	align-items: flex-start
+	justify-content: center
+	margin-bottom: 60px
+	&__item
+		width: 65px
+		margin-right: 10px
+		&:last-child
+			margin-right: 0
+	&__value
+		width: 100%
+		height: 68px
+		background-color: #f2f2f2
+		border-radius: 5px
+		display: flex
+		justify-content: center
+		align-items: center
+		color: #300b46
+		font-family: $Roboto
+		font-weight: 700
+		font-size: 40px
+		margin-bottom: 8px
+		box-shadow: 0 3px 0 #0b020f
+		position: relative
+		background-image: url(../img/line.svg)
+		background-repeat: no-repeat
+		background-position: center
+	&__item-title
+		font-size: 16px
+		color: #ffffff
+		text-align: center
+
+.progress-bar
+	background-color: #ffffff
+	border-radius: 5px
+	position: relative
+	margin-bottom: 40px
+	height: 24px
+	&:before
+		content: '4M Max'
+		position: absolute
+		top: 50%
+		transform: translateY(-50%)
+		right: 10px
+		font-size: 14px
+		font-weight: 300
+
+	&:after
+		content: ''
+		position: absolute
+		top: 0
+		left: 0
+		width: 68%
+		height: 100%
+		border-radius: 5px
+		background-image: linear-gradient(to right, #18d6f2 0%, #10cb6c 100%)
+	&__notice
+		position: absolute
+		bottom: -25px
+		left: 5%
+		font-size: 12px
+		color: #94889a
+		font-weight: 300
+		letter-spacing: 0.6px
+	&__metka
+		position: absolute
+		top: -30px
+		font-size: 14px
+		letter-spacing: 0.7px
+		text-transform: uppercase
+		font-family: $Catamaran
+		font-weight: 300
+		color: #ffffff
+		&:after
+			content: ''
+			position: absolute
+			bottom: -35px
+			z-index: 1
+			left: 50%
+			width: 1px
+			height: 30px
+	&__metka--700
+		&:after
+			background-color: rgba(255,255,255,.7)
+	&__metka--15
+		&:after
+			background-color: rgba(255,255,255,.3)
+	&__metka--3
+		&:after
+			display: none
+		
+.payments
+	display: flex
+	justify-content: space-between
+	align-items: center
+
+// ico blokc end
+
+// clock start
+
+// clock end
+
+// about block start
+.about
+	p
+		text-align: center
+		margin-bottom: 30px
+	.logoes
+		margin-bottom: 10px
+
+
+.video
+	background-image: url(../img/watch-video-bg.jpg)
+	height: 290px
+	background-size: cover
+	background-repeat: no-repeat
+	position: relative
+	&__btn
+		width: 90px
+		height: 90px
+		box-shadow: 0 0 21px rgba(152, 108, 169, 0.79)
+		background-color: $purpure
+		position: absolute
+		top: 20px
+		left: 20px
+		transition: background-color 0.4s, box-shadow 0.4s, top 0.4s ease-in-out
+		border-radius: 50%
+		display: flex
+		justify-content: center
+		align-items: center
+		position: relative
+		img
+			margin-left: 8px
+			transition: transform 0.4s
+		&:hover
+			background-color: $grey
+			box-shadow: 0 0 21px rgba(56, 56, 56, 0.79)
+			top: 40px
+			img
+				transform: scale(1.05)
+// about block end
+
+// logoes block start
+.logoes
+	display: flex
+	justify-content: center
+	align-items: center
+	flex-wrap: wrap
+	img
+		margin: 0 25px 20px
+		opacity: 0.24
+		transition: opacity 0.4s
+		&:hover
+			opacity: 0.54
+// logoes block end
+
+// services block start 
+.services
+	padding-bottom: 30px
+
+.service
+	text-align: center
+	figure
+		height: 71px
+		display: flex
+		align-items: center
+		margin-bottom: 15px
+		justify-content: center
+	h3
+		margin-bottom: 10px
+	margin-bottom: 30px
+
+// services block end
+
+// data block start
+.data
+	&__num
+		position: relative
+		margin-top: 30px
+	&__num-row
+		display: flex
+		p
+			font-size: 20px
+			color: #997cab
+			font-family: $Raleway
+			font-weight: 700
+	&__num-value
+		font-size: 110px
+		line-height: 90px
+		color: #ffffff
+		font-family: $Roboto
+		font-weight: 900
+		margin-right: 24px
+	&__num-name
+		display: flex
+		font-size: 40px
+		font-family: $Catamaran
+		color: #ffffff
+		flex-direction: column
+		justify-content: space-between
+		div
+			line-height: 1
+			position: relative
+			&:first-child
+				top: 3px
+			&:last-child
+				bottom: -5px
+// data block end
+
+// map start
+.road
+	&__item
+		position: relative
+		padding-left: 40px
+		margin-bottom: 30px
+		&:after
+			content: ''
+			position: absolute
+			top: 2px
+			left: 8.5px
+			width: 1px
+			border-left: 1px solid $purpure
+			height: calc(100% + 30px)
+		&:last-child
+			&:after
+				display: none
+			margin-bottom: 0
+	&__item-active
+		&:after
+			border-left: 1px dashed #c6c6c6
+		.road__item-metka
+			width: 31px
+			height: 31px
+			border: 2px solid $purpure
+			position: absolute
+			top: -5px
+			left: -7px
+			display: flex
+			justify-content: center
+			align-items: center
+			&:after
+				content: ''
+				display: block
+				border-radius: 50%
+				width: 15px
+				height: 15px
+				background-color: #f09790
+	&__item-next
+		&:after
+			border-left: 1px dashed #c6c6c6
+		.road__item-metka
+			border: 2px solid #c6c6c6
+
+	&__item-metka
+		width: 17px
+		height: 17px
+		border: 2px solid $purpure
+		border-radius: 50%
+		background-color: #fff
+		position: absolute
+		top: 2px
+		left: 0
+		z-index: 1
+	&__item-title
+		font-size: 14px
+		font-family: $Raleway
+		color: #333333
+		font-weight: 700
+		margin-bottom: 10px
+	p
+		line-height: 25px
+// map end
+
+// docs start 
+.docs
+	.col-12
+		&:last-child
+			.doc
+				margin-bottom: 0
+
+.doc
+	height: 275px
+	width: 100%
+	display: block
+	overflow: hidden
+	border-radius: 5px
+	position: relative
+	margin-bottom: 10px
+	transition: transform 0.4s
+	img
+		width: 51px
+		height: 55px
+	&__content
+		z-index: 2
+		display: flex
+		justify-content: center
+		align-items: center
+		flex-direction: column
+		width: 100%
+		height: 100%
+		position: relative
+	&:after
+		content: ''
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+		background-color: #4e166d
+		z-index: 0
+		transition: opacity 0.4s
+		opacity: 0
+		border-radius: 5px
+	&:before
+		content: ''
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+		z-index: 0
+		border-radius: 5px
+		background-image: url(../img/docBg.jpg)
+		background-size: cover
+		background-repeat: no-repeat
+	img
+		margin-bottom: 20px
+	&__title
+		font-size: 18px
+		font-family: $Raleway
+		font-weight: 700
+		color: #ffffff
+	&:hover
+		background-image: none
+		transform: scale(1.1)
+		box-shadow: 0 3px 40px rgba(0, 0, 0, 0.55)
+		&:after
+			opacity: 1
+
+// docs end
+
+// stat block start 
+.stat
+	.col-lg-3
+		&:last-child
+			.counter__item
+				margin-bottom: 0
+
+.counter
+	&__item
+		text-align: center
+		margin-bottom: 20px
+
+	&__item-title
+		color: #ffffff
+		font-size: 20px
+		font-family: $Raleway
+		font-weight: 700
+		margin-bottom: 0px
+	&__item-value
+		font-family: $Roboto
+		font-weight: 700
+		font-size: 30px
+	&__item-value--blue
+		color: #5874cf
+	&__item-value--pink
+		color: #f09790
+	&__item-value--green
+		color: #16bf86
+	&__item-value--purpure
+		color: #8761a8
+	&__item-value--percent
+		&:after
+			content: "%"
+// stat block end
+
+
+// faq start block
+
+$color: #4a6e78
+$border: 1px solid #e3e3e3
+
+.accordion
+	border-top: $border
+	li
+		border-bottom: $border
+		position: relative
+		padding: 15px 0px 15px 0
+	p 
+		display: none
+		padding-top: 10px 
+		font-size: 16px
+		line-height: 28px
+	a
+		width: 100%
+		display: block
+		cursor: pointer
+		font-size: 18px
+		line-height: 22px
+		font-family: $Raleway
+		font-weight: 700
+		user-select: none
+		transition: color 0.4s
+		padding-right: 25px
+		
+		&:after
+			content: ''
+			position: absolute
+			top: 24px
+			right: 0
+			width: 19px
+			border-bottom: 3px solid $purpure
+		&:before
+			content: ''
+			position: absolute
+			top: 16px
+			right: 7.5px
+			width: 3px
+			height: 19px
+			transition: height 0.4s
+			border-left: 3px solid $purpure
+		&:hover
+			color: $purpure !important
+		&.active
+			&:before
+				height: 0
+
+// faq end block
+
+// platform start block
+.platform
+	background-color: #fcfcfc
+	position: relative
+	overflow: hidden
+	&__content
+		position: relative
+	p
+		margin-bottom: 30px
+	.btn
+		margin-bottom: 35px
+	&__img
+		box-shadow: 0 0 32px rgba(0, 0, 0, 0.08)
+		position: relative
+		display: block
+		width: 100%
+		z-index: 1
+
+.parallax-el
+	position: absolute
+	top: -30%
+	right: -5%
+	z-index: 0
+	display: none
+// platform end block
+
+// advisors block start
+.advisors
+	padding-bottom: 20px
+.advisor
+	text-align: center
+	margin-bottom: 40px
+	&__img
+		border-radius: 50%
+		width: 230px
+		height: 230px
+		margin: 0 auto 20px
+		position: relative
+		display: block
+		img
+			transition: transform 0.4s
+			border-radius: 50%
+			&:hover
+				transform: scale(0.95)
+	&__sn
+		position: absolute
+		top: 10px
+		right: 0
+		img
+			width: 45px
+			height: 45px
+	&__title
+		font-family: $Raleway
+		font-weight: 700
+		color: #333333
+		margin-bottom: 5px
+	&__post
+		font-size: 16px
+		color: #bebebe
+		margin-bottom: 15px
+	&__text
+
+
+// advisors block end
+
+// team block start
+.team
+	padding-bottom: 30px
+
+.team-member
+	margin-bottom: 30px
+	text-align: center
+	&__avatar
+		width: 109px
+		height: 109px
+		border-radius: 50%
+		display: block
+		margin: 0 auto 15px
+	&__name
+		color: #ffffff
+		margin-bottom: 10px
+		line-height: 1
+	&__post
+		color: #9e86ad
+		font-size: 16px
+		margin-bottom: 17px
+		line-height: 1
+	&__social
+		display: flex
+		justify-content: center
+		li
+			margin-right: 5px
+			&:last-child
+				margin-right: 0
+		a
+			display: block
+			transition: transform 0.4s
+			&:hover
+				transform: translateY(-5px)
+		img
+			display: block
+			width: 23px
+			height: 23px
+
+//team block end
+
+// press start 
+.press-carousel
+	&__item
+		font-size: 20px
+	&__item-logo
+		display: flex
+		justify-content: center
+		margin-bottom: 25px
+		height: 100%
+		align-items: center
+		opacity: 0.3
+		transition: opacity 0.4s
+		img
+			display: inline-block !important
+			width: auto !important
+		&:hover
+			opacity: 0.65
+	
+	.owl-dots
+		display: flex
+		justify-content: center
+		align-items: center
+		margin-top: 30px
+
+	.owl-dot
+		width: 10px
+		height: 10px
+		background-color: #dedede !important
+		border-radius: 50%
+		margin-right: 10px
+		transition: background 0.4s, width 0.4, height 0.4s
+		&:last-child
+			margin-right: 0
+		&.active
+			width: 12px
+			height: 12px
+			background-color: $purpure !important
+// press end 
+
+// news start 
+.news
+	position: relative
+	&:before
+		content: ''
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		height: calc(100% - 170px)
+		background-color: #fbfcfb
+	.block-header
+		margin-bottom: 40px
+
+.news-carousel
+	&__item-img
+		object-fit: cover
+		display: block
+	&__item
+		background-color: #fff
+		display: block
+		color: $black
+		margin: 20px 0 35px
+		&:hover
+			.news-carousel__item-body
+				box-shadow: 0 3px 27px rgba(0, 0, 0, 0.17)
+				color: $black
+	&__item-body
+		padding: 40px 49px 36px 38px
+		transition: box-shadow 0.4s
+	&__item-subtitle
+		font-size: 16px
+		color: #f4929b
+		font-family: $Catamaran
+		font-weight: 700
+		margin-bottom: 24px
+	&__item-title
+		font-size: 20px
+		font-family: $Raleway
+		font-weight: 700
+		line-height: 30px
+		color: #333333
+		margin-bottom: 25px
+	p
+		line-height: 30px
+		margin-bottom: 25px
+	&__item-data
+		color: #bebebe
+		font-size: 16px
+		font-family: $Catamaran
+		font-weight: 700
+
+	.owl-dots
+		display: flex
+		justify-content: center
+		align-items: center
+
+	.owl-dot
+		width: 10px
+		height: 10px
+		border-radius: 50%
+		transition: 0.4s
+		background-color: #dedede !important
+		cursor: pointer
+		margin-right: 10px
+		&:last-child
+			margin-right: 0
+		&.active
+			width: 12px
+			height: 12px
+			background-color: $purpure !important
+// news end
+
+.footer
+	&__list
+		margin-bottom: 30px
+		color: #fff
+	&__bot
+		padding: 60px 0 46px
+		background-color: rgba(17, 4, 23, 0.54)
+	.logo
+		margin-bottom: 27px
+		&__img
+			height: 71px
+
+.form
+	&__input
+		width: 100%
+		display: block
+		border-radius: 5px
+		background-color: rgba(255,255,255,0.24)
+		margin-bottom: 20px
+		padding-left: 25px
+		color: #000000
+		font-size: 16px
+		font-weight: 300
+		line-height: 55px
+		height: 55px
+		border: none
+		transition: 0.4s
+		&:hover, &:focus, &.in
+			background-color: rgba(255,255,255,1)
+			&::placeholder
+				color: $black
+				opacity: 0.5
+		&::placeholder
+			color: #ffffff
+			opacity: 0.5
+			transition: 0.4s
+	&__textarea
+		color: #000000
+		font-size: 16px
+		font-weight: 300
+		resize: none
+		height: 196px
+		padding-left: 25px
+		padding-top: 22px
+		display: block
+		border-radius: 5px
+		background-color: rgba(255,255,255,0.24)
+		width: 100%
+		border: none
+		margin-bottom: 20px
+		transition: 0.4s	
+		&:hover, &:focus, &.in
+			background-color: rgba(255,255,255,1)
+			&::placeholder
+				color: $black
+				opacity: 0.5
+		&::placeholder
+			color: #ffffff
+			opacity: 0.5
+			transition: 0.4s
+	&__btn
+		cursor: pointer
+	&__title
+		color: #ffffff
+		margin-bottom: 20px
+	&__row
+		display: block
+		.form
+			&__input
+				width: 100%
+				margin-bottom: 10px
+				margin-right: 0
+			&__btn
+				width: 100%
+	
+label.error
+	display: none !important
+
+.footer-menu
+	display: flex
+	flex-wrap: wrap
+	justify-content: space-between
+	align-items: center
+	margin-bottom: 16px
+	&__item
+		flex: 0 50%
+	&__link
+		color: #ffffff
+		transition: 0.4s
+		position: relative
+		line-height: 1
+		&:after
+			content: ""
+			position: absolute
+			bottom: 4px	
+			left: 0
+			width: 100%
+			border-bottom: 1px solid $purpure
+			opacity: 0
+		&:hover
+			color: #ffffff
+			&:after
+				opacity: 1
+
+.copyright
+	font-size: 14px
+	line-height: 25px
+	color: #624a71
+	margin-bottom: 30px
+
+
+// token block start 
+.token
+	&__info-list
+		margin-bottom: 30px
+		li
+			font-family: $Catamaran
+			font-weight: 400
+			color: #888a8b
+			margin-bottom: 5px
+			display: flex
+			span
+				width: 140px
+				color: #404040
+				font-family: $Catamaran
+				font-weight: 700
+			&:last-child
+				margin-bottom: 0	
+	&__desc
+		margin-bottom: 30px
+	&__desc-title
+		color: #333333
+		font-size: 25px
+		font-family: $Raleway
+		font-weight: 700
+		margin-bottom: 15px
+		line-height: 1
+	&__desc-text
+		line-height: 30px
+		color: #777777
+		p, b
+			display: block
+			margin-bottom: 15px
+			&:last-child
+				margin-bottom: 0
+
+.chart-row
+	align-items: center
+	margin-bottom: 30px
+	.token__desc-text
+		margin-bottom: 30px
+
+.chart
+	&__wrap
+		position: relative
+		margin-bottom: 30px
+	&__legend
+		li
+			display: flex
+			align-items: center
+			color: #777777
+			margin-bottom: 16px
+			line-height: 22px
+			span
+				content: ''
+				width: 14px
+				height: 5px
+				border-radius: 3px
+				display: inline-block
+				margin-right: 8px
+			&:last-child
+				margin-bottom: 0
+
+// token block end
+
+// partners block start
+.partners
+	.section-header
+		text-align: center
+		h4
+			display: inline-block
+// partners block end
+@import "media" // Always at the end

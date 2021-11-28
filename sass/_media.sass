@@ -1,0 +1,474 @@
+@import "vars"
+
+
+/*==========  Desktop First  ==========*/
+
+
+//Extra large: ≥1200px
++media-breakpoint-down(xl)
+
+//Large: ≥992px
++media-breakpoint-down(lg)
+
+//Medium: ≥768px
++media-breakpoint-down(md)
+    
+//Small: ≥576px
++media-breakpoint-down(sm)
+    .faq
+        .container 
+            max-width: 100%
+
+//Extra small: >0
++media-breakpoint-down(xs)
+
+
+/*==========  Mobile First  ==========*/
+
+//Extra small: <576px
++media-breakpoint-up(xs)
+
+//Small: ≤576px
++media-breakpoint-up(sm)
+
+    .promo
+        padding-bottom: 100px
+        &__links-wrap
+            margin-bottom: 67px
+            display: flex
+            align-items: center
+        &__link
+            &:first-child
+                margin-right: 65px
+                margin-bottom: 0
+        &__btns-wrap
+            display: flex
+        .btn
+            width: auto
+            &:first-child
+                margin-right: 17px
+                margin-bottom: 0
+    .service
+        text-align: left
+        figure
+            justify-content: flex-start
+
+    .ico
+        padding: 45px 35px 60px
+        &__title
+            font-size: 25px
+            margin-bottom: 45px
+        &__subtitle
+            font-size: 20px
+        &__text
+            margin-bottom: 45px
+        &__btn
+            margin-bottom: 45px
+
+    .payments
+        justify-content: center
+        img
+            margin-right: 25px 
+            &:last-child
+                margin-right: 0
+    .video
+        height: 330px
+
+    .road
+        &__item-title
+            position: absolute
+            left: -230px
+            text-align: right
+            width: 200px
+            top: -1px
+
+
+
+    .docs
+        .col-12
+            &:nth-last-child(2)
+                .doc
+                    margin-bottom: 0
+
+    .doc
+        height: 230px
+        margin-bottom: 30px
+    
+    .stat
+        .col-lg-3
+            &:nth-last-child(2)
+                .counter__item
+                    margin-bottom: 0
+
+    .counter
+        &__item-title
+            margin-bottom: 5px
+
+    .team
+        padding-bottom: 10px        
+
+    .team-member
+        display: flex
+        text-align: left
+        margin-bottom: 50px
+        &__avatar
+            margin: 0
+        &__content
+            padding-left: 22px
+        &__social
+            justify-content: flex-start
+    
+            
+//Medium: ≤768px
++media-breakpoint-up(md)
+    h1
+        font-size: 60px
+        line-height: 60px
+        span
+            display: block
+            font-size: 40px
+
+    h2
+        font-size: 40px
+        line-height: 45px
+
+    h3
+        font-size: 20px
+
+    h4
+        margin-bottom: 30px
+
+    .section
+        padding: 100px 0 
+        &--no-pad-bot
+            padding-bottom: 0
+        &--no-pad-top
+            padding-top: 0
+
+    .section-header
+        &--big-margin
+            margin-bottom: 100px
+        &--medium-margin
+            margin-bottom: 60px
+        &--small-margin
+            margin-bottom: 35px
+
+    .fixed-menu
+        &__header
+            padding: 0 40px
+        
+
+    .header
+        padding: 0 40px
+        &.sticky
+            padding: 0 40px
+
+    .promo
+        h1
+            margin-bottom: 36px
+        p
+            margin-bottom: 54px
+
+    .about
+        .section-header--medium-margin
+            margin-bottom: 40px
+        p
+            margin-bottom: 50px
+        .logoes
+            margin-bottom: 40px
+    
+    .services
+	    padding-bottom: 70px
+       
+    .service
+        figure
+            margin-bottom: 43px
+        h3
+            margin-bottom: 24px
+
+
+    .road
+        &__item
+            padding-left: 80px
+            &:before
+                content: ''
+                position: absolute
+                top: 11px
+                left: 30px
+                width: 40px
+                border-bottom: 1px solid #e2e2e2
+
+    .doc
+        height: 295px
+
+    .counter
+        &__item
+            margin-bottom: 35px
+        &__item-title
+            margin-bottom: 10px
+        &__item-value
+            font-size: 40px
+
+    .accordion
+        li
+            paddint: 20px 25px 20px 0
+        a
+            font-size: 20px
+            line-height: 30px
+            &:after
+                top: 28px
+            &:before
+                top: 20px
+        p
+            padding-top: 10px
+            font-size: 18px
+            line-height: 30px
+
+    .platform
+        &:before
+            display: block
+        .btn
+            margin-bottom: 0
+        &__img
+            position: absolute
+            top: -90px
+            right: -490px
+        p
+            margin-bottom: 36px
+
+    .advisors
+        padding-bottom: 60px
+
+    .advisor
+        display: block
+        &__img
+            margin-bottom: 25px
+        &__title
+            margin-bottom: 0
+        &__post
+            margin-bottom: 15px
+        
+    .team
+        padding-bottom: 50px 
+
+    .press-carousel
+        &__item-logo
+            margin-bottom: 40px
+        .owl-dots
+            margin-top: 65px
+
+    .news-carousel
+        &__item
+            margin-bottom: 50px
+        
+    .form
+        &__row
+            display: flex
+            justify-content: space-between
+            .form
+                &__input
+                    margin-bottom: 0
+                    margin-right: 6px
+                &__btn
+                    width: auto
+
+    .token
+        &__desc-title
+            margin-bottom: 27px
+        &__desc-text
+            p
+                margin-bottom: 30px
+        &__info-list
+            margin-bottom: 48px
+            li
+                margin-bottom: 15px
+
+    .chart-row
+        margin-bottom: 40px
+        .token__desc-text
+            margin-bottom: 50px
+
+    .chart
+        display: flex
+        align-items: center
+        &__wrap
+            max-width: 315px
+            margin-right: 30px
+
+    .partners
+        .section-header
+            text-align: left
+//Large: ≤992px
++media-breakpoint-up(lg)
+    
+    .section
+        padding: 150px 0
+        &--no-pad-bot
+            padding-bottom: 0
+        &--no-pad-top
+            padding-top: 0
+
+    .promo
+        padding-bottom: 150px
+        &__btns-wrap
+            margin-bottom: 0
+        &__bg
+            display: block
+
+    .payments
+        justify-content: space-between
+        img
+            margin-right: 0
+
+    .video
+        height: 420px
+        &__btn
+            top: 50px
+            left: 50px
+
+    .services
+	    padding-bottom: 120px
+
+    .service
+        margin-bottom: 0
+        
+
+    .road
+        &__item
+            padding-left: 106px
+            &:before
+                left: 40px
+                width: 47px
+
+    .data
+        &__num
+            top: 20px
+        &__num-row
+            &:first-child
+                margin-bottom: 10px
+    .docs
+        .col-12
+            &:last-child
+                .doc
+                    margin-bottom: 0
+    
+    .doc
+        height: 230px
+        margin-bottom: 0    
+
+    .counter
+        &__item-title
+            font-size: 17px
+        &__item
+            margin-bottom: 0
+        
+    .platform
+        &__img
+            width: auto
+            right: -900px
+
+    .logoes
+        img
+            margin: 0 15px 20px
+
+    .partners
+        .logoes
+            justify-content: space-between
+            img
+                margin: 0
+
+    .advisors
+        background-image: url(../img/tr-bg-left-big.png)
+        background-repeat: no-repeat
+        background-position: left bottom
+
+    .team
+        padding-bottom: 100px 
+
+    .press-carousel
+        &__item
+            display: flex !important
+        &__item-logo
+            margin: 0
+
+    .social-block
+        margin-bottom: 0 
+
+    .footer
+        &__bot
+            .footer__list
+                margin-left: 20px
+
+    .chart-row
+        margin-bottom: 80px
+        .token__desc-text
+            margin-bottom: 0px
+
+    .bg-triangle-left
+        display: block
+
+    .bg-triangle-top
+        display: block
+
+    .parallax-el
+        display: block
+        right: -20%
+//Extra large: ≤1200px
++media-breakpoint-up(xl)
+    .header
+       &__right
+            display: flex
+    
+    .menu
+        display: flex
+
+    .btn-menu
+        display: none
+
+    .timer
+        height: 102px
+
+    .data
+        &__num-value
+            font-size: 120px
+        &__num
+            top: 30px
+        &__num-row
+            &:first-child
+                margin-bottom: 10px
+
+    .doc
+        height: 265px
+
+    .counter
+        &__item
+            margin-bottom: 0
+        &__item-title
+            margin-bottom: 25px
+            font-size: 20px
+
+    .platform
+        &__img
+            right: -935px
+
+    .advisors
+        padding-bottom: 70px
+        
+    .advisor
+        text-align: left
+        display: flex
+        margin-bottom: 80px
+        &__img
+            margin-right: 40px
+
+    .parallax-el
+        right: -5%
+
+@media only screen and (min-width : 1400px)
+    .logo
+        &__title
+            font-size: 30px
+
+    .menu
+        &__item
+            margin-right: 35px
