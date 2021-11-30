@@ -272,23 +272,22 @@ $(function() {
 		var myChart = new Chart(ctx, {
 			type: 'doughnut',
 			data: {
-				labels: ["Red", "Blue", "Yellow", "Green", "Purple"],
+				labels: ["Red", "Blue", "Yellow", "Buy Reflection"],
 				datasets: [{
 					label: '# of Votes',
-					data: [15, 18, 13, 9, 10],
+					data: [15, 18, 13, 50, 10],
 					backgroundColor: [
 						'#5874cf',
 						'#f09790',
 						'#8761a8',
 						'#16bf86',
-						'#ffae57',
 					],
 					
 				}]
 			},
 			options: {
 				legend: {
-					display: false
+					display: true
 				}
 			}
 		});
