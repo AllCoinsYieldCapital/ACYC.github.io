@@ -5513,7 +5513,8 @@ section {
 }
 
 .btn--medium {
-	padding: 0 30px
+	padding: 0 30px;
+	margin-left:15px
 }
 
 .btn--big {
@@ -7220,7 +7221,8 @@ section {
 
 .press-carousel__item-logo img {
 	display: inline-block!important;
-	width: auto!important
+	width: auto!important;
+	
 }
 
 .press-carousel__item-logo:hover {
